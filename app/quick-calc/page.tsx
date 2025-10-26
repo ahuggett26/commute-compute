@@ -73,7 +73,7 @@ export default function QuickCalc() {
     }
 
     return (
-        <div className="p-8">
+        <>
             <h2 className="text-2xl font-semi-bold underline pb-4">Quick Calculate</h2>
             <div className="py-4">
                 <p>How often do you commute to work?</p>
@@ -112,7 +112,6 @@ export default function QuickCalc() {
                 <h3 className="text-xl font-semi-bold underline pb-4">Results</h3>
                 {daysInput !== undefined && hoursInput !== undefined && minsInput !== undefined && totalTimingResults()}
             </div>
-
-        </div>
+        </>
     )
 }

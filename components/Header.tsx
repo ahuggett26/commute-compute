@@ -8,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import CalculateIcon from '@mui/icons-material/Calculate';
+import ThemeSwitch from "./ThemeSwitch";
 
 const actions = [
   { icon: <HomeIcon />, name: 'Home', url: '/' },
@@ -22,8 +23,9 @@ export default function Header() {
 
   return (
     <header>
-      <div className="sticky top-0 z-50 flex items-center justify-between bg-white px-4 py-2 shadow-md">
-        <h1 className="text-4xl font-bold p-4">Commute Compute</h1>
+      <div className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white dark:bg-gray-900 dark:shadow-gray-500">
+        <h1 className="text-4xl font-bold p-4 mr-10 dark:text-white">Commute Compute</h1>
+        <ThemeSwitch />
         <SpeedDial
           className="absolute right-10 top-4"
           ariaLabel="SpeedDial navigation"
