@@ -1,5 +1,6 @@
 'use client';
 
+import ComparisonOutput from "@/comparison/ComparisonOutput";
 import { validNoDays } from "@/validation/DateValidation";
 import { validHours, validMinutes } from "@/validation/TimeValidation";
 import { FormHelperText, InputAdornment, MenuItem, OutlinedInput, Select } from "@mui/material";
@@ -7,6 +8,7 @@ import { useState } from "react";
 
 export default function QuickCalc() {
     const [freq, setFreq] = useState<'weekly' | 'monthly' | 'yearly'>('weekly');
+    const [outputFreq, setOutputFreq] = useState<'week' | 'month' | 'year'>('year');
     const [daysInput, setDaysInput] = useState<number>();
     const [hoursInput, setHoursInput] = useState<number>();
     const [minsInput, setMinsInput] = useState<number>();
@@ -26,50 +28,6 @@ export default function QuickCalc() {
         if (validationResult.length === 0) {
             setInputVal(Number(value));
         }
-    }
-
-    function totalTimingResults() {
-        // We can assume freq, days, hours and mins are correct
-        const minsPerDay = (hoursInput! * 60 + minsInput!) * 2;
-        const minsPerFreq = minsPerDay * daysInput!;
-
-        let minsPerWeek: number;
-        let minsPerMonth: number;
-        let minsPerYear: number;
-        switch (freq) {
-            case 'weekly':
-                minsPerWeek = minsPerFreq;
-                minsPerMonth = minsPerFreq * 4.3;
-                minsPerYear = minsPerFreq * 52;
-                break;
-            case 'monthly':
-                minsPerWeek = minsPerFreq / 4.3;
-                minsPerMonth = minsPerFreq;
-                minsPerYear = minsPerFreq * 12;
-                break;
-            case 'yearly':
-                minsPerWeek = minsPerFreq / 52;
-                minsPerMonth = minsPerFreq / 12;
-                minsPerYear = minsPerFreq;
-                break;
-        }
-
-        return (
-            <div>
-                <p>Your commute takes:</p>
-                <ul className="list-disc list-inside">
-                    <li>{Math.round(minsPerWeek)} minutes per week</li>
-                    <li>{Math.round(minsPerMonth)} minutes per month</li>
-                    <li>{Math.round(minsPerYear)} minutes per year</li>
-                </ul>
-                <p>or...</p>
-                <ul className="list-disc list-inside">
-                    <li>{(minsPerWeek / 60).toFixed(1)} hours per week</li>
-                    <li>{(minsPerMonth / 60).toFixed(1)} hours per month</li>
-                    <li>{(minsPerYear / 60).toFixed(1)} hours per year</li>
-                </ul>
-            </div>
-        )
     }
 
     return (
@@ -110,7 +68,23 @@ export default function QuickCalc() {
 
             <div className="pt-10">
                 <h3 className="text-xl font-semi-bold underline pb-4">Results</h3>
-                {daysInput !== undefined && hoursInput !== undefined && minsInput !== undefined && totalTimingResults()}
+                {daysInput !== undefined && hoursInput !== undefined && minsInput !== undefined && (
+                    <>
+                        <p className="inline pe-2">View results over a</p>
+                        <Select value={outputFreq} onChange={(e) => setOutputFreq(e.target.value)}>
+                            <MenuItem value={'week'}>week</MenuItem>
+                            <MenuItem value={'month'}>month</MenuItem>
+                            <MenuItem value={'year'}>year</MenuItem>
+                        </Select>
+
+                        <ComparisonOutput
+                            totalHours={hoursInput}
+                            totalMinutes={minsInput}
+                            daysPerPeriod={daysInput}
+                            inputFreq={freq}
+                            outputFreq={outputFreq} />
+                    </>
+                )}
             </div>
         </>
     )
