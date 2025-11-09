@@ -17,16 +17,10 @@ export default function ComparisonOutput(props: ComparisonOutputProps) {
         <div className="pt-4">
             <div>
                 <p>{staticComp.title()}</p>
-                <ul className="list-disc list-inside">
-                    <li>{staticComp.minutesInPeriod(props.outputFreq)}</li>
-                </ul>
-                <p>or</p>
-                <ul className="list-disc list-inside">
-                    <li>{staticComp.hoursInPeriod(props.outputFreq)}</li>
-                </ul>
+                <p>{staticComp.minutesInPeriod(props.outputFreq)} or {staticComp.hoursInPeriod(props.outputFreq)}</p>
             </div>
             <div>
-                <p>Here is what that looks like in other contexts:</p>
+                <p className="pt-4">Here is what that looks like in other contexts:</p>
                 {allComparitors().map((comp, index) => (
                     <div key={index} className="pt-4">
                         <p>{comp.describeSelf()}</p>
