@@ -1,8 +1,8 @@
 /**
  * An amount of time for a single event to be completed.
  */
-export class TimeComparison {
-    constructor(private desc: string, private unit: TimeUnit, private amount: number) { }
+export abstract class TimeComparison {
+    constructor(protected unit: TimeUnit, protected amount: number) { }
 
     /**
      * Calculates how many times an event can occur within a given period.
@@ -10,17 +10,9 @@ export class TimeComparison {
      * @param periodUnit The scale of the duration.
      * @returns 
      */
-    frequencyIn(commuteTimeMins: number): number {
+    occasionsIn(commuteTimeMins: number): number {
         const eventTimeInMins = timeInMinutes(this.amount, this.unit);
         return commuteTimeMins / eventTimeInMins;
-    }
-
-    /**
-     * Describes the action taken with the amount of time to complete the event.
-     * @returns A string description of the event.
-     */
-    describeSelf(): string {
-        return `It takes ${this.amount} ${this.unit} to ${this.desc}`;
     }
 
     /**
@@ -29,9 +21,17 @@ export class TimeComparison {
      * @returns A string description of the frequency of the event.
      */
     describeFrequencyIn(outputFreq: string, commuteTimeMins: number): string {
-        const frequency = this.frequencyIn(commuteTimeMins);
-        return `in a ${outputFreq} of your commute, you could ${this.desc} approximately ${frequency.toFixed(2)} times.`;
+        const occasions = this.occasionsIn(commuteTimeMins).toFixed(2);
+        return this.describeComparison(outputFreq, occasions);
     }
+
+    protected abstract describeComparison(outputFreq: string, frequency: string): string;
+
+    /**
+     * Describes the action taken with the amount of time to complete the event.
+     * @returns A string description of the event.
+     */
+    abstract describeSelf(): string;
 }
 
 export enum TimeUnit {
