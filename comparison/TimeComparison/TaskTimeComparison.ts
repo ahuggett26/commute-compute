@@ -1,7 +1,7 @@
 import { TimeComparison, TimeUnit } from "./TimeComparison";
 
 export class TaskTimeComparison extends TimeComparison {
-    constructor(private desc: string, unit: TimeUnit, amount: number) {
+    constructor(private desc: string, unit: TimeUnit, amount: number, private compFormat?: string, ) {
         super(unit, amount);
     }
 
@@ -10,6 +10,7 @@ export class TaskTimeComparison extends TimeComparison {
     }
 
     protected describeComparison(outputFreq: string, frequency: string): string {
-        return `in a ${outputFreq} of your commute, you could ${this.desc} approximately ${frequency} times.`
+        const compString = this.compFormat ? this.compFormat.replace("XXX", `approximately ${frequency}`) : `${this.desc} approximately ${frequency} times`;
+        return `in a ${outputFreq} of your commute, you could ${compString}.`
     }
 }
