@@ -31,7 +31,18 @@ export class StaticTimeConversion {
         return "Your commute takes:";
     }
 
-    minutesInPeriod(timePeriod: 'week' | 'month' | 'year' ): string {
+    commuteMins(timePeriod: 'week' | 'month' | 'year'): number {
+        switch (timePeriod) {
+            case 'week':
+                return this.minsPerWeek;
+            case 'month':
+                return this.minsPerMonth;
+            case 'year':
+                return this.minsPerYear;
+        }
+    }
+
+    minutesInPeriod(timePeriod: 'week' | 'month' | 'year'): string {
         switch (timePeriod) {
             case 'week':
                 return `${Math.round(this.minsPerWeek)} minutes per week`;
@@ -42,7 +53,7 @@ export class StaticTimeConversion {
         }
     }
 
-    hoursInPeriod(timePeriod: 'week' | 'month' | 'year' ): string {
+    hoursInPeriod(timePeriod: 'week' | 'month' | 'year'): string {
         switch (timePeriod) {
             case 'week':
                 return `${(this.minsPerWeek / 60).toFixed(1)} hours per week`;
