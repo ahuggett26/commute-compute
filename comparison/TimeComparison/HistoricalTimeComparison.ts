@@ -1,8 +1,8 @@
 import { TimeComparison, TimeUnit } from "./TimeComparison";
 
 export class HistoricalTimeComparison extends TimeComparison {
-    constructor(private subj: string, private desc: string, unit: TimeUnit, amount: number) {
-        super(unit, amount);
+    constructor(title: string, private subj: string, private desc: string, unit: TimeUnit, amount: number) {
+        super(title, unit, amount);
     }
 
     describeSelf(): string {

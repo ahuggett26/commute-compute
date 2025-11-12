@@ -1,3 +1,4 @@
+import ComparisonCard from "./ComparisonCard";
 import { allComparitors } from "./Comparitors";
 import { StaticTimeConversion } from "./StaticTimeConversion";
 
@@ -22,10 +23,7 @@ export default function ComparisonOutput(props: ComparisonOutputProps) {
             <div>
                 <p className="pt-4">Here is what that looks like in other contexts:</p>
                 {allComparitors().map((comp, index) => (
-                    <div key={index} className="pt-4">
-                        <p>{comp.describeSelf()}</p>
-                        <p>So... {comp.describeFrequencyIn(props.outputFreq, commuteMins)}</p>
-                    </div>
+                    <ComparisonCard key={`Comparison${index}`} comparison={comp} outputFreq={props.outputFreq} commuteMins={commuteMins} />
                 ))}
             </div>
         </div>

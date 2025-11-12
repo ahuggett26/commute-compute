@@ -1,8 +1,8 @@
 import { TimeComparison, TimeUnit } from "./TimeComparison";
 
 export class TaskTimeComparison extends TimeComparison {
-    constructor(private desc: string, unit: TimeUnit, amount: number, private compFormat?: string, ) {
-        super(unit, amount);
+    constructor(title: string, private desc: string, unit: TimeUnit, amount: number, private compFormat?: string,) {
+        super(title, unit, amount);
     }
 
     describeSelf(): string {
