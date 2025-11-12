@@ -2,7 +2,11 @@
  * An amount of time for a single event to be completed.
  */
 export abstract class TimeComparison {
-    constructor(private title: string, protected unit: TimeUnit, protected amount: number) { }
+    constructor(
+        private title: string,
+        private imageUrl: string, 
+        protected unit: TimeUnit, 
+        protected amount: number) { }
 
     /**
      * Calculates how many times an event can occur within a given period.
@@ -27,6 +31,10 @@ export abstract class TimeComparison {
 
     getTitle(): string {
         return this.title;
+    }
+
+    getImageUrl(): string {
+        return this.imageUrl;
     }
 
     protected abstract describeComparison(outputFreq: string, frequency: string): string;

@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { TimeComparison } from "./TimeComparison/TimeComparison";
 
 interface ComparisonCardProps {
@@ -9,7 +9,12 @@ interface ComparisonCardProps {
 
 export default function ComparisonCard(props: ComparisonCardProps) {
     return (
-        <Card variant="elevation" sx={{ marginTop: 2 }}>
+        <Card variant="elevation" sx={{ marginTop: 2, display: 'flex' }}>
+            <CardMedia
+                sx={{ height: 120, width: 120 }}
+                image={props.comparison.getImageUrl()}
+                title="green iguana"
+            />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {props.comparison.getTitle()}
