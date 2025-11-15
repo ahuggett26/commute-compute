@@ -12,7 +12,6 @@ export default function ComparisonCard(props: ComparisonCardProps) {
             <CardMedia
                 sx={{ height: 120, width: 120 }}
                 image={props.comparison.getImageUrl()}
-                title="green iguana"
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">

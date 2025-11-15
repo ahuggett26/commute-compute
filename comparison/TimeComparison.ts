@@ -1,10 +1,11 @@
+import { ImageWithCredit } from "@/Credits/Credits";
+
 /**
  * An amount of time for a single event to be completed.
  */
 export class TimeComparison {
     constructor(
-        private title: string,
-        private imageUrl: string,
+        private image: ImageWithCredit,
         private selfDescription: (dur: string) => string,
         private comparisonDesc: (freq: string) => string,
         private unit: TimeUnit,
@@ -32,11 +33,11 @@ export class TimeComparison {
     }
 
     getTitle(): string {
-        return this.title;
+        return this.image.title;
     }
 
     getImageUrl(): string {
-        return this.imageUrl;
+        return this.image.imageUrl;
     }
 
     describeComparison(frequency: string): string {
