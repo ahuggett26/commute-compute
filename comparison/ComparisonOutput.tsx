@@ -23,7 +23,7 @@ export default function ComparisonOutput(props: ComparisonOutputProps) {
             <div>
                 <p className="pt-4">Here is what that looks like in other contexts:</p>
                 {allComparitors().map((comp, index) => (
-                    <ComparisonCard key={`Comparison${index}`} comparison={comp} outputFreq={props.outputFreq} commuteMins={commuteMins} />
+                    <ComparisonCard key={`Comparison${index}`} comparison={comp} commuteMins={commuteMins} />
                 ))}
             </div>
         </div>

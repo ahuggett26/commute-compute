@@ -1,9 +1,8 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { TimeComparison } from "./TimeComparison/TimeComparison";
+import { TimeComparison } from "./TimeComparison";
 
 interface ComparisonCardProps {
     comparison: TimeComparison;
-    outputFreq: 'week' | 'month' | 'year';
     commuteMins: number;
 }
 
@@ -23,7 +22,7 @@ export default function ComparisonCard(props: ComparisonCardProps) {
                     {props.comparison.describeSelf()}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    So... {props.comparison.describeFrequencyIn(props.outputFreq, props.commuteMins)}
+                    In this time {props.comparison.describeFrequencyIn(props.commuteMins)}
                 </Typography>
             </CardContent>
         </Card>
