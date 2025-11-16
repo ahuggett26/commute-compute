@@ -3,7 +3,7 @@
 import ComparisonOutput from "@/comparison/ComparisonOutput";
 import { validNoDays } from "@/validation/DateValidation";
 import { validHours, validMinutes } from "@/validation/TimeValidation";
-import { FormHelperText, InputAdornment, MenuItem, OutlinedInput, Select, Typography } from "@mui/material";
+import { Divider, FormHelperText, InputAdornment, MenuItem, OutlinedInput, Select, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function QuickCalc() {
@@ -66,7 +66,9 @@ export default function QuickCalc() {
                 <FormHelperText error={true}>{minsValidation}</FormHelperText>
             </div>
 
-            <div className="pt-10">
+            <Divider variant="middle" className="pt-5" />
+
+            <div className="pt-5">
                 <Typography variant="h5" className="pb-4">Results</Typography>
                 {daysInput !== undefined && hoursInput !== undefined && minsInput !== undefined && (
                     <>
