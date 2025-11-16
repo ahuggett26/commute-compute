@@ -1,0 +1,15 @@
+.car-commute-icon {
+    font-size: 7em;
+    animation: driving 5s normal infinite linear;
+}
+
+@keyframes driving {
+    0% {
+        padding-left: 100%;
+        margin-left: 0;
+    }
+    100% {
+        padding-left: 0;
+        margin-left: -25%;
+    }
+}

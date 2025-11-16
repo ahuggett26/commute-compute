@@ -1,3 +1,5 @@
+import "./ComparisonOutput.css";
+import { Card, CardContent, Typography } from "@mui/material";
 import ComparisonCard from "./ComparisonCard";
 import { allComparitors } from "./Comparitors";
 import { StaticTimeConversion } from "./StaticTimeConversion";
@@ -17,11 +19,21 @@ export default function ComparisonOutput(props: ComparisonOutputProps) {
     return (
         <div className="pt-4">
             <div>
-                <p>{staticComp.title()}</p>
-                <p>{staticComp.minutesInPeriod(props.outputFreq)} or {staticComp.hoursInPeriod(props.outputFreq)}</p>
+                <Card variant="elevation" sx={{ margin: '2 0' }}>
+                    <div className="w-full">
+                        <h1 className="car-commute-icon inline-block leading-none">
+                            🚗
+                        </h1>
+                    </div>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">Your Commute</Typography>
+                        <Typography variant="body2">{staticComp.title()}</Typography>
+                        <Typography variant="body2">{staticComp.minutesInPeriod(props.outputFreq)} or {staticComp.hoursInPeriod(props.outputFreq)}</Typography>
+                    </CardContent>
+                </Card>
             </div>
             <div>
-                <p className="pt-4">Here is what that looks like in other contexts:</p>
+                <Typography className="pt-4">Here is what that looks like in other contexts:</Typography>
                 {allComparitors().map((comp, index) => (
                     <ComparisonCard key={`Comparison${index}`} comparison={comp} commuteMins={commuteMins} />
                 ))}
