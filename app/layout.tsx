@@ -7,7 +7,7 @@ import { theme } from "../theme/theme";
 
 export const metadata: Metadata = {
   title: "Commute Compute",
-  description: "Find out how much of your life is lost the the commute.",
+  description: "Find out how much of your life is lost to your commute.",
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
