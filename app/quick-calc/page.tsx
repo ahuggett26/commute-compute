@@ -3,7 +3,7 @@
 import ComparisonOutput from "@/comparison/ComparisonOutput";
 import { validNoDays } from "@/validation/DateValidation";
 import { validHours, validMinutes } from "@/validation/TimeValidation";
-import { FormHelperText, InputAdornment, MenuItem, OutlinedInput, Select } from "@mui/material";
+import { FormHelperText, InputAdornment, MenuItem, OutlinedInput, Select, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function QuickCalc() {
@@ -32,9 +32,9 @@ export default function QuickCalc() {
 
     return (
         <>
-            <h2 className="text-2xl font-semi-bold underline pb-4">Quick Calculate</h2>
+            <Typography variant="h4" className="pb-4">Quick Calculate</Typography>
             <div className="py-4">
-                <p>How often do you commute to work?</p>
+                <Typography>How often do you commute to work?</Typography>
                 <OutlinedInput
                     id="DaysInput"
                     slotProps={{ input: { inputMode: 'numeric', pattern: '[0-9]*' } }}
@@ -49,7 +49,7 @@ export default function QuickCalc() {
                 <FormHelperText error={true}>{daysValidation}</FormHelperText>
             </div>
             <div className="py-4">
-                <p>How long is your commute?</p>
+                <Typography>How long is your commute?</Typography>
                 <OutlinedInput
                     id="HoursInput"
                     slotProps={{ input: { inputMode: 'numeric', pattern: '[0-9]*' } }}
@@ -67,10 +67,10 @@ export default function QuickCalc() {
             </div>
 
             <div className="pt-10">
-                <h3 className="text-xl font-semi-bold underline pb-4">Results</h3>
+                <Typography variant="h5" className="pb-4">Results</Typography>
                 {daysInput !== undefined && hoursInput !== undefined && minsInput !== undefined && (
                     <>
-                        <p className="inline pe-2">View results over a</p>
+                        <Typography className="inline pe-2">View results over a</Typography>
                         <Select value={outputFreq} onChange={(e) => setOutputFreq(e.target.value)}>
                             <MenuItem value={'week'}>week</MenuItem>
                             <MenuItem value={'month'}>month</MenuItem>

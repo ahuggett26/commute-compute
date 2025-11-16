@@ -1,7 +1,7 @@
 'use client';
 
 import TimelineIcon from "@mui/icons-material/Timeline";
-import { Divider, SpeedDial, SpeedDialAction } from "@mui/material";
+import { Divider, SpeedDial, SpeedDialAction, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import LayersIcon from '@mui/icons-material/Layers';
 import HomeIcon from '@mui/icons-material/Home';
@@ -24,10 +24,10 @@ export default function Header() {
   return (
     <header>
       <div className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white dark:bg-gray-900 dark:shadow-gray-500">
-        <h1 className="text-4xl font-bold p-4 mr-10 dark:text-white">Commute Compute</h1>
+        <Typography variant="h3" className="p-3 pr-10 dark:text-white">Commute Compute</Typography>
         <ThemeSwitch />
         <SpeedDial
-          className="absolute right-10 top-4"
+          className="absolute right-10 top-5"
           ariaLabel="SpeedDial navigation"
           icon={<LayersIcon />} direction="down">
           {actions.map((action) => (
