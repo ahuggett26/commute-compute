@@ -15,7 +15,7 @@ const actions = [
   { icon: <CalculateIcon />, name: 'Quick Calculate', url: '/quick-calc' },
   { icon: <PersonIcon />, name: 'Account', url: '/account' },
   { icon: <TimelineIcon />, name: 'Timeline', url: '/timeline' },
-  { icon: <MenuBookIcon />, name: 'Logs', url: '/logs' },
+  { icon: <MenuBookIcon />, name: 'Logs', url: '/commute-logger' },
 ];
 
 export default function Header() {
