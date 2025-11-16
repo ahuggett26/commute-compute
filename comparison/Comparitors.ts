@@ -2,7 +2,6 @@ import { ImagesWithCredits } from "@/credits/Credits";
 import { TimeComparison } from "./TimeComparison";
 import { TimeUnit } from "./TimeComparison";
 
-// TODO: provide accreditation for images used.
 export function allComparitors() {
     return [
         new TimeComparison(
@@ -23,7 +22,6 @@ export function allComparitors() {
             (freq) => `you could have played ${freq} football matches.`,
             TimeUnit.Minutes,
             90),
-        // https://en.wikipedia.org/wiki/File:Martin_Luther_King_Jr_National_Historic_Site_(36233249121).jpg
         new TimeComparison(
             ImagesWithCredits.MARTIN_LUTHER_KING_JR,
             (dur) => `It took ${dur} for Martin Luther King Jr. to deliver the iconic "I have a dream" speech.`,
