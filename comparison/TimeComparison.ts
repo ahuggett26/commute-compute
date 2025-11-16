@@ -1,4 +1,4 @@
-import { ImageWithCredit } from "@/Credits/Credits";
+import { ImageWithCredit } from "@/credits/Credits";
 
 /**
  * An amount of time for a single event to be completed.

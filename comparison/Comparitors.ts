@@ -1,4 +1,4 @@
-import { ImagesWithCredits } from "@/Credits/Credits";
+import { ImagesWithCredits } from "@/credits/Credits";
 import { TimeComparison } from "./TimeComparison";
 import { TimeUnit } from "./TimeComparison";
 
