@@ -8,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import CalculateIcon from '@mui/icons-material/Calculate';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import ThemeSwitch from "./ThemeSwitch";
 
 const actions = [
@@ -16,6 +17,7 @@ const actions = [
   { icon: <PersonIcon />, name: 'Account', url: '/account' },
   { icon: <TimelineIcon />, name: 'Timeline', url: '/timeline' },
   { icon: <MenuBookIcon />, name: 'Logs', url: '/commute-logger' },
+  { icon: <LocalLibraryIcon />, name: 'Credits', url: '/credits' },
 ];
 
 export default function Header() {
