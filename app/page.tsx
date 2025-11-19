@@ -1,5 +1,5 @@
 import ComparisonCard from "@/comparison/ComparisonCard";
-import { allComparitors } from "@/comparison/Comparitors";
+import { allComparitors, shuffedComparitors } from "@/comparison/Comparitors";
 import { Link, Typography } from "@mui/material";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       <Typography variant="body1" className="pb-2">
         Here is what that might look like in other contexts.
       </Typography>
-      {allComparitors().map((comp, index) => (
+      {shuffedComparitors().map((comp, index) => (
           <ComparisonCard key={`Comparison${index}`} comparison={comp} commuteMins={14040} />
       ))}
     </div>

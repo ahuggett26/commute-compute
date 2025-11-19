@@ -10,19 +10,19 @@ export interface ImageWithCredit {
 
 export class ImagesWithCredits {
     public static THE_MATRIX: ImageWithCredit = {
-        title: "The Matrix",
+        title: "The red pill or the blue pill?",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Smith_Matrix_mannequins_%28cropped%29.jpg/250px-Smith_Matrix_mannequins_%28cropped%29.jpg",
         creditLicense: CreditLicenses.CREATIVE_COMMONS_2_5,
         author: "Marcin Wichary",
         authorLink: "https://www.flickr.com/photos/mwichary/"
     };
     public static APOLLO_11: ImageWithCredit = {
-        title: "Apollo 11",
+        title: "One small step for man",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Buzz_Aldrin_by_Neil_Armstrong.jpg/250px-Buzz_Aldrin_by_Neil_Armstrong.jpg",
         creditLicense: CreditLicenses.PUBLIC_DOMAIN,
     };
-    public static FOOTBALL_MATCH: ImageWithCredit = {
-        title: "Football match",
+    public static KICKAROUND: ImageWithCredit = {
+        title: "Kickaround",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Soccer_ball_%2820174935849%29.jpg/330px-Soccer_ball_%2820174935849%29.jpg",
         creditLicense: CreditLicenses.CREATIVE_COMMONS_2_0,
         author: "J Dimas",
@@ -36,8 +36,13 @@ export class ImagesWithCredits {
         authorLink: "https://www.flickr.com/people/42600860@N02"
     };
     public static TO_KILL_A_MOCKINGBIRD: ImageWithCredit = {
-        title: "To kill a mockingbird",
+        title: "Until I feared I would lose it, I never loved to read",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/500px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+        creditLicense: CreditLicenses.PUBLIC_DOMAIN,
+    };
+    public static HAMLET: ImageWithCredit = {
+        title: "To be or not to be",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a8/HamletSkullHCSealous.jpg",
         creditLicense: CreditLicenses.PUBLIC_DOMAIN,
     };
 }

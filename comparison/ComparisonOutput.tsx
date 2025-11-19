@@ -1,7 +1,7 @@
 import "./ComparisonOutput.css";
 import { Card, CardContent, Typography } from "@mui/material";
 import ComparisonCard from "./ComparisonCard";
-import { allComparitors } from "./Comparitors";
+import { allComparitors, shuffedComparitors } from "./Comparitors";
 import { StaticTimeConversion } from "./StaticTimeConversion";
 
 interface ComparisonOutputProps {
@@ -34,7 +34,7 @@ export default function ComparisonOutput(props: ComparisonOutputProps) {
             </div>
             <div>
                 <Typography className="pt-4">Here is what that looks like in other contexts:</Typography>
-                {allComparitors().map((comp, index) => (
+                {shuffedComparitors().map((comp, index) => (
                     <ComparisonCard key={`Comparison${index}`} comparison={comp} commuteMins={commuteMins} />
                 ))}
             </div>

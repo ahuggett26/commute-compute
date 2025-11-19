@@ -17,7 +17,7 @@ export function allComparitors() {
             TimeUnit.Days,
             4),
         new TimeComparison(
-            ImagesWithCredits.FOOTBALL_MATCH,
+            ImagesWithCredits.KICKAROUND,
             (dur) => `It takes ${dur} to play a football match.`,
             (freq) => `you could have played ${freq} football matches.`,
             TimeUnit.Minutes,
@@ -34,5 +34,18 @@ export function allComparitors() {
             (freq) => `you could have read 'To Kill a Mockingbird' ${freq} times.`,
             TimeUnit.Hours,
             5.5),
+        new TimeComparison(
+            ImagesWithCredits.HAMLET,
+            (dur) => `The National Theater's version of Hamlet lasts ${dur}.`,
+            (freq) => `you could have watched Hamlet ${freq} times.`,
+            TimeUnit.Minutes,
+            170),
     ];
+}
+
+export function shuffedComparitors() {
+    return allComparitors()
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
 }
