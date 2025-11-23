@@ -1,4 +1,4 @@
-import { ImagesWithCredits } from "@/credits/Credits";
+import { ImagesWithCredits } from "@/datasources/Credits";
 import { Card, CardContent, CardMedia, Link, Typography } from "@mui/material";
 
 export default function Credits() {

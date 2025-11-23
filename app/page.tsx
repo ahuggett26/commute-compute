@@ -1,5 +1,5 @@
 import ComparisonCard from "@/comparison/ComparisonCard";
-import { allComparitors, shuffedComparitors } from "@/comparison/Comparitors";
+import { shuffedComparitors } from "@/comparison/Comparitors";
 import { Link, Typography } from "@mui/material";
 
 export default function Home() {
